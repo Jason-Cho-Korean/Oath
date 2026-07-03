@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 입학사정관/평가위원 서약서</title>
+    <style>
+        body { font-family: 'Malgun Gothic', dotum, sans-serif; background-color: #f0f2f5; line-height: 1.6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 5px solid #124633; }
+        h2 { text-align: center; color: #111; font-size: 24px; margin-bottom: 10px; letter-spacing: 2px; }
+        .subtitle { text-align: center; font-size: 14px; color: #666; margin-bottom: 30px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
+        .info-grid .full-width { grid-column: 1 / -1; }
+        .form-group label { display: block; font-weight: bold; font-size: 14px; margin-bottom: 6px; color: #444; }
+        .form-group input[type="text"], .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 14px; background-color: #fff; font-family: inherit; }
+        
+        .form-group input[readonly] { background-color: #e9ecef; color: #495057; cursor: not-allowed; }
+        
+        .warning-box { background-color: #ddede7; border: 1px solid #124633; color: #124633; padding: 15px; border-radius: 4px; font-size: 13.5px; margin-bottom: 25px; }
+        .clause-section { margin-bottom: 25px; }
+        .clause-title { font-size: 16px; font-weight: bold; margin-bottom: 10px; color: #111; border-bottom: 2px solid #333; padding-bottom: 5px; }
+        .check-item { background-color: #fafafa; border: 1px solid #e1e4e8; padding: 12px 15px; border-radius: 4px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .check-text { font-size: 13.5px; width: 85%; word-break: keep-all; }
+        .checkbox-label { font-weight: bold; color: #0056b3; cursor: pointer; display: flex; align-items: center; }
+        .checkbox-label input { margin-right: 5px; width: 18px; height: 18px; }
+        .text-box { border: 1px solid #ccc; padding: 15px; background-color: #fdfdfd; font-size: 13px; color: #555; margin-bottom: 15px; }
+        .canvas-container { border: 2px dashed #bbb; background-color: #fff; border-radius: 4px; position: relative; margin-bottom: 10px; }
+        canvas { width: 100%; height: 120px; display: block; cursor: crosshair; }
+        .btn-clear { background-color: #6c757d; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; }
+        .btn-submit { width: 100%; background-color: #124633; color: #fff; border: none; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 30px; }
+        .btn-submit:hover { background-color: #001a35; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<img src="https://admission.skku.edu/common/download.php?fpath=board/202607020907562S58LV.jpg&fname=Logo.jpg" alt="성균관대학교 로고" style="display: block; margin: 0 auto 20px auto; max-width: 100%; width: 600px; height: auto;">
+
+    <h2>서 약 서</h2>
+    
+    <form id="pledgeForm">
+        <div class="info-grid">
+            <div class="form-group full-width">
+                <label for="admissionType">전형 (학년도/전형명/모집단위) <span style="color:red">*</span></label>
+                <select id="admissionType" required>
+                    <option value="">데이터를 불러오는 중입니다...</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="role">직무 <span style="color:red">*</span></label>
+                <select id="role" required>
+                    <option value="">데이터를 불러오는 중입니다...</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="period">기간 <span style="color:red">*</span></label>
+                <input type="text" id="period" placeholder="전형과 직무를 선택하면 자동 입력됩니다" readonly required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">소속 <span style="color:red">*</span></label>
+                <input type="text" id="department" placeholder="소속 부서(혹은 기관명)" required>
+            </div>
+            <div class="form-group">
+                <label for="contact">연락처 <span style="color:red">*</span></label>
+                <input type="text" id="contact" placeholder="010-0000-0000" required>
+            </div>
+            <div class="form-group full-width">
+                <label for="userName">서약자 성명 <span style="color:red">*</span></label>
+                <input type="text" id="userName" placeholder="성명을 정확히 입력해주세요" required>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            아래 내용을 서약할 수 없을 때에는 즉시 관계자에게 알리고 위 직무에 참여하지 않습니다. 또한, 직무수행 중 서약한 내용과 다른 사실을 인지하거나 확인했을 때에는 즉시 직무수행을 중단하고 관계자에게 알려야 합니다. 회피사유에 해당함을 인지하였음에도 이를 대학의 장에게 알리지 않을 경우 고등교육법 및 그 시행령에 저촉될 수 있습니다.
+        </div>
+
+        <div class="clause-section">
+            <div class="clause-title">회피/배제사유 해당 여부 확인</div>
+            <div class="check-item"><div class="check-text">1. 본인 또는 배우자의 친인척이 위 전형에 지원한(할) 사실이 없습니다.<br><span style="font-size:12px; color:#666;">(※ 본인이 수행하는 위 직무와 관련없는 다른 모집단위에 지원했을 경우 "예"에 해당)</span></div><label class="checkbox-label"><input type="checkbox" id="avoid1" required> 예</label></div>
+            <div class="check-item"><div class="check-text">2. 본인 또는 배우자가 최근 3년 사이 위 전형에 지원한 수험생을 학교(고등학교 등)에서 교육했거나 학원 또는 과외 교습했거나 참여한 사실이 없습니다.</div><label class="checkbox-label"><input type="checkbox" id="avoid2" required> 예</label></div>
+            <div class="check-item"><div class="check-text">3. 가까운 지인이 위 전형에 지원한(할) 경우 등과 같이 본인이 위 전형에 참여하여 위 직무를 공정하게 수행하지 못할 정도의 사유는 없습니다.</div><label class="checkbox-label"><input type="checkbox" id="avoid3" required> 예</label></div>
+            <div class="check-item"><div class="check-text">4. 최근 3년 사이, 대학입학 관련 민간영리 참고서 등을 저술 또는 감수하였거나 어떠한 형태로든 참여한 사실이 없습니다.</div><label class="checkbox-label"><input type="checkbox" id="avoid4" required> 예</label></div>
+        </div>
+
+        <div class="clause-section">
+            <div class="clause-title">서약 사항</div>
+            <div class="text-box">
+                <strong>1. 공정 · 윤리 서약</strong><br>가. 본인은 위 직무를 수행한다는 사실을 타인에게 알리거나 노출하지 않을 것을 서약합니다.<br>나. 공정한 전형관리를 위해 필요한 경우, 출입 통제 또는 휴대폰(전자기록매체) 사용금지 등의 지시가 있을 수 있음을 이해하고 이에 따를 것을 서약합니다.<br>다. 본인은 대학입학전형에서 정한 선발원칙과 평가기준을 준수하고, 양심에 따라 객관적이고 공정하게 직무를 수행하고 그 비밀을 엄수할 것이며, 지원자 또는 이해관계자로부터 어떠한 청탁도 받지 않을 것이며, 지원자에게 부당한 이익을 제공하지 않겠습니다.<br>라. 직무 종료 후에도 공정성을 위배하는 이해관계자와의 일체의 접촉을 하지 않을 것을 서약합니다.<br><br><strong>2. 비밀유지 서약</strong><br>가. 직무 수행 중 취득한 그 어떠한 유 · 무형의 정보도 승인없이 보유, 무단 사용, 복제, 유출하지 않을 것을 서약합니다.<br>나. 직무 종료 후에도 직무 중에 직 · 간접적으로 알거나 획득한 그 어떠한 유 · 무형의 정보도 승인 없이 제3자에게 누설하지 않을 것을 서약합니다.
+            </div>
+            <div class="check-item" style="background-color: #ddede7; border-color: #124633;">
+                <div class="check-text" style="color: #124633; font-weight: bold;">본인은 위 기간 동안 위 직무를 수행함에 있어, 성균관대학교와 성균관대학교 입학처의 정보 보호와 비밀유지 방침 등에 대해 충분한 설명을 듣고 내용을 이해하였기에 위 사항을 확인하고 준수할 것을 서약하며, 만약 서약 위반이 있을 경우 민·형사상 책임을 감수하겠습니다.</div>
+                <label class="checkbox-label"><input type="checkbox" id="finalAgree" required> 동의함</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>서약자 서명 <span style="color:red">*</span></label>
+            <div class="canvas-container"><canvas id="signaturePad"></canvas></div>
+            <button type="button" class="btn-clear" id="btnClear">서명 지우기 / 다시 쓰기</button>
+        </div>
+
+        <button type="submit" class="btn-submit">위 내용으로 서약서 제출하기</button>
+    </form>
+</div>
+
+<script>
+    // ★ 주의: 여기에 반드시 기존 웹앱 URL을 다시 넣어주세요!
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxawivEJu0t17P_9NSy8vdoYwwJZLdzd5pTFKyH0JwUVlbuhNN5qVgx83GMfSLeAM90/exec';
+
+    let admissionPeriodMap = {};
+
+    window.addEventListener('DOMContentLoaded', () => {
+        fetch(WEB_APP_URL)
+            .then(response => response.json())
+            .then(data => {
+                admissionPeriodMap = data.periodMap;
+                populateDropdown('admissionType', data.admissionTypes, '-- 해당하는 전형을 선택해 주세요 --');
+                populateDropdown('role', data.roles, '-- 직무를 선택해 주세요 --');
+            })
+            .catch(err => {
+                console.error("데이터 불러오기 실패:", err);
+                alert("메뉴 데이터를 불러오지 못했습니다. 새로고침 해주세요.");
+            });
+    });
+
+    function populateDropdown(selectId, optionsArray, defaultText) {
+        const selectElement = document.getElementById(selectId);
+        selectElement.innerHTML = `<option value="">${defaultText}</option>`;
+        optionsArray.forEach(option => {
+            if (option) {
+                const opt = document.createElement('option');
+                opt.value = option;
+                opt.textContent = option;
+                selectElement.appendChild(opt);
+            }
+        });
+    }
+
+    // ★ 두 가지(전형, 직무)가 모두 선택되었는지 확인하고 기간을 채우는 마법의 함수
+    function checkAndFillPeriod() {
+        const selectedAdmission = document.getElementById('admissionType').value;
+        const selectedRole = document.getElementById('role').value;
+        const periodInput = document.getElementById('period');
+        
+        // 전형과 직무가 모두 선택되었다면
+        if (selectedAdmission && selectedRole) {
+            // "전형|직무" 형태의 비밀번호(키)를 만들어 메모장에서 기간을 찾습니다.
+            const searchKey = selectedAdmission + "|" + selectedRole;
+            
+            if (admissionPeriodMap[searchKey]) {
+                periodInput.value = admissionPeriodMap[searchKey]; // 일치하는 조합이 있으면 기간 입력
+            } else {
+                periodInput.value = "해당하는 조합의 기간 정보가 없습니다."; // 엑셀에 없는 조합일 경우 안내
+            }
+        } else {
+            periodInput.value = ""; // 둘 중 하나라도 선택이 안 되어있으면 빈칸 유지
+        }
+    }
+
+    // 전형 메뉴나 직무 메뉴가 바뀔 때마다 위의 마법 함수를 실행시킵니다.
+    document.getElementById('admissionType').addEventListener('change', checkAndFillPeriod);
+    document.getElementById('role').addEventListener('change', checkAndFillPeriod);
+
+    // 아래 서명 패드 및 폼 제출 코드는 기존과 동일합니다.
+    const canvas = document.getElementById('signaturePad');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    function resizeCanvas() { canvas.width = canvas.parentElement.clientWidth; canvas.height = 120; ctx.lineWidth = 2.5; ctx.strokeStyle = '#000000'; }
+    window.addEventListener('resize', resizeCanvas); resizeCanvas();
+    function getEventPos(e) { const rect = canvas.getBoundingClientRect(); const clientX = e.touches ? e.touches[0].clientX : e.clientX; const clientY = e.touches ? e.touches[0].clientY : e.clientY; return { x: clientX - rect.left, y: clientY - rect.top }; }
+    function startDrawing(e) { isDrawing = true; const pos = getEventPos(e); ctx.beginPath(); ctx.moveTo(pos.x, pos.y); }
+    function draw(e) { if (!isDrawing) return; if (e.touches) e.preventDefault(); const pos = getEventPos(e); ctx.lineTo(pos.x, pos.y); ctx.stroke(); }
+    function stopDrawing() { isDrawing = false; }
+    canvas.addEventListener('mousedown', startDrawing); canvas.addEventListener('mousemove', draw); window.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('touchstart', startDrawing, {passive: false}); canvas.addEventListener('touchmove', draw, {passive: false}); window.addEventListener('touchend', stopDrawing);
+    document.getElementById('btnClear').addEventListener('click', () => { ctx.clearRect(0, 0, canvas.width, canvas.height); });
+
+    document.getElementById('pledgeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const blank = document.createElement('canvas'); blank.width = canvas.width; blank.height = canvas.height;
+        if (canvas.toDataURL() === blank.toDataURL()) { alert('하단에 자필 서명을 기입해 주세요.'); return; }
+
+        const payload = {
+            name: document.getElementById('userName').value.trim(),
+            department: document.getElementById('department').value.trim(),
+            contact: document.getElementById('contact').value.trim(),
+            admissionType: document.getElementById('admissionType').value,
+            role: document.getElementById('role').value,
+            period: document.getElementById('period').value, 
+            avoid1: document.getElementById('avoid1').checked ? "예" : "", avoid2: document.getElementById('avoid2').checked ? "예" : "",
+            avoid3: document.getElementById('avoid3').checked ? "예" : "", avoid4: document.getElementById('avoid4').checked ? "예" : "",
+            finalAgree: document.getElementById('finalAgree').checked ? "동의함" : "",
+            signature: canvas.toDataURL()
+        };
+
+        const submitBtn = document.querySelector('.btn-submit');
+        submitBtn.disabled = true; submitBtn.innerText = '안전하게 전송 중입니다...';
+
+        fetch(WEB_APP_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) })
+        .then(() => {
+            alert('서약서가 성공적으로 제출되었습니다. 감사합니다.');
+            document.getElementById('pledgeForm').reset(); ctx.clearRect(0, 0, canvas.width, canvas.height);
+            submitBtn.disabled = false; submitBtn.innerText = '위 내용으로 서약서 제출하기';
+        })
+        .catch(err => {
+            alert('네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'); console.error(err);
+            submitBtn.disabled = false; submitBtn.innerText = '위 내용으로 서약서 제출하기';
+        });
+    });
+</script>
+
+</body>
+</html>
